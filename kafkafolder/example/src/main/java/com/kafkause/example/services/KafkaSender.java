@@ -1,4 +1,4 @@
-package com.kafkause.example.service;
+package com.kafkause.example.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -10,10 +10,10 @@ public class KafkaSender {
 	@Autowired
 	private KafkaTemplate<String, String> kafkaTemplate;
 
-	final static String kafkaTopic = "TOPIC";
+	private static final String TOPIC = "TOPIC";
 
 	public void send(String message) {
-		kafkaTemplate.send(kafkaTopic, message);
+		kafkaTemplate.send(TOPIC, message);
 	}
 
 }
